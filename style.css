@@ -146,6 +146,7 @@ svg {
         align-items: center;
         justify-content: center;
         max-width: 900px;
+        transform: scale(.9);
     }
 
     .content {
