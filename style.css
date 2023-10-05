@@ -1,14 +1,7 @@
 
-
+/* Reset */
 * {
     box-sizing: border-box;
-}
-
-:root {
---VeryDarkGrayishBlue: hsl(217, 19%, 35%);
---DesaturatedDarkBlue: hsl(214, 17%, 51%);
---GrayishBlue: hsl(212, 23%, 69%);
---LightGrayishBlue: hsl(210, 46%, 95%);
 }
 
 img ,
@@ -16,11 +9,26 @@ svg {
     max-width: 100%;
 }
 
+/* Utility Classes */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+:root {
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    }
+
+/* General styles */
 body {
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height:100vh;
 
     Font-size: 13px;
     background-color: var(--LightGrayishBlue);
@@ -28,23 +36,18 @@ body {
     margin:0;
 }
 
-.image {
-    width: 100%;
-    height: 200px; 
-    border-radius: 10px 10px 0 0 ;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .container {
     width: 90%;
     background-color: white;
     border-radius: 10px;
-    /* overflow: hidden; */
+}
+
+.image {
+    max-width: 100%;
+    height: 220px;
+    background-image: url(/images/drawers.jpg);
+    background-size: cover;
+    border-radius: 10px 10px 0 0 ;
 }
 
 .content {
@@ -111,9 +114,13 @@ body {
     color: white;
     width: calc(100% + 60px);
     left: -30px;
-    bottom: -10px;
+    bottom: -9px;
     padding: 2px 30px 10px;
     border-radius: 0 0 10px 10px;
+}
+
+.share-section:hover {
+    cursor: pointer;
 }
 
 .shareIcon {
@@ -142,11 +149,9 @@ svg {
 @media (min-width: 500px) {
 
     .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 33% 66%;
         max-width: 900px;
-        transform: scale(.85);
     }
 
     .content {
@@ -156,18 +161,23 @@ svg {
     }
 
     .image {
-        height: 345px;
-        max-width: 350px;
+        height:100%;
+        background-size: cover;
         border-radius: 10px 0 0 10px ;
-
     }
 
     .title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        line-height: 1.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .description {
         font-size: 1.1rem;
+    }
+
+    .personal-details {
+        position:relative;
     }
 
     .share-section {
@@ -175,8 +185,11 @@ svg {
         height: 50px;
         border-radius: 10px;
         padding: 5px 15px;
+        left: 0;
         top: -60px;
-        left: 350px;
+        left:initial;
+        bottom:initial;
+        right:-95px;
     }
 
     .share-section::before {
@@ -190,13 +203,9 @@ svg {
         border-top:20px solid var(--VeryDarkGrayishBlue) ;
         border-right:20px solid transparent;
         border-left: 20px solid transparent ;
-
     }
     
     .shareIcon {
         display:none;
     }
-
-
-
 }

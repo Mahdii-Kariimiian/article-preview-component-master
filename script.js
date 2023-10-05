@@ -2,6 +2,12 @@ const personal = document.querySelector(".personal-details")
 const container = document.querySelector(".container")
 const shareBtn = document.querySelector(".share-btn")
 
+
+// cursor for share button
+shareBtn.addEventListener ("mouseover" , ()=>{
+    shareBtn.style.cursor = "pointer"
+})
+
 /* remove hidden class */
 shareBtn.addEventListener ( "click" , remove)
 
@@ -37,12 +43,10 @@ shareDiv.appendChild(facebook)
 shareDiv.appendChild(twitter)
 shareDiv.appendChild(pinterest)
 shareDiv.appendChild(shareIcon)
-console.log(shareDiv)
 
 /* add hidden class */
 shareIcon.addEventListener("click" , add)
 function  add() {
-    /* shareBtn.insertAdjacentElement("beforebegin" , shareDiv) */
     shareDiv.classList.add("hidden")
 }
 

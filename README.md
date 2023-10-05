@@ -1,94 +1,111 @@
-# Frontend Mentor - Article preview component
+Article preview component master
 
-![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)
+Junior challenge at frontendmentors.io 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I used](#what-i-learned)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
+This App shows a piece of advice every time the button is clicked
 
-**To do this challenge, you need a basic understanding of HTML, CSS and a tiny bit of JavaScript.**
+### Screenshot
 
-## The challenge
+### Links
+-Netlify: https://magical-empanada-65ecf9.netlify.app/
+- frontendmentors: https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT/hub
 
-Your challenge is to build out this article preview component and get it looking as close to the design as possible.
+### Built with
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+- Semantic HTML5 markup
+- CSS custom properties
+- JavaScript
 
-The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
+### What I used
 
-Your users should be able to: 
+Here is a glimpse of what I used to build this mini project.
+````
 
-- View the optimal layout for the component depending on their device's screen size
-- See the social media share links when they click the share icon
+CSS
+.share-section {
+        width: 240px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 5px 15px;
+        left: 0;
+        top: -60px;
+        left:initial;
+        bottom:initial;
+        right:-95px;
+    }
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+    .share-section::before {
+        content:'';
+        position:absolute;
+        width:0;
+        height:0;
+        bottom: -30px;
+        left:105px;
+        border-bottom: 20px solid transparent ;
+        border-top:20px solid var(--VeryDarkGrayishBlue) ;
+        border-right:20px solid transparent;
+        border-left: 20px solid transparent ;
+    }
 
-## Where to find everything
+JavaScript
+/* remove hidden class */
+shareBtn.addEventListener ( "click" , remove)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+function remove() {
+    shareDiv.classList.toggle("hidden")
+}
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+/* create Share Div */
+const shareDiv = document.querySelector(".share-section")
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+const shareText = document.createElement("p")
+shareText.classList.add("share-text")
+shareText.innerText = "SHARE"
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+const facebook = document.createElement("p")
+facebook.classList.add("facebook")
+facebook.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg>'
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+const twitter = document.createElement("p")
+twitter.classList.add("twitter")
+twitter.innerHTML= '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"><path fill="#FFF" d="M20 2.172a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.605.996A4.096 4.096 0 0013.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392 1a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.658a11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.663-12.205A8.354 8.354 0 0020 2.172z"/></svg>'
 
-## Building your project
+const pinterest = document.createElement("p")
+pinterest.classList.add("pinterest")
+pinterest.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"/></svg>'
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+const shareIcon = document.createElement("p")
+shareIcon.classList.add("shareIcon" , "share-btn")
+shareIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>'
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+shareDiv.appendChild(shareText)
+shareDiv.appendChild(facebook)
+shareDiv.appendChild(twitter)
+shareDiv.appendChild(pinterest)
+shareDiv.appendChild(shareIcon)
 
-## Deploying your project
+/* add hidden class */
+shareIcon.addEventListener("click" , add)
+function  add() {
+    shareDiv.classList.add("hidden")
+}
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+````
+## Author
+Mahdi Karimian
+- linkedin (www.linkedin.com/in/mahdi-karimian-116643273)
+- Frontend Mentor – @Mahdii-Kariimiian (https://www.frontendmentor.io/profile/Mahdii-Kariimiian)
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
 
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
