@@ -20,7 +20,7 @@ Junior challenge at frontendmentors.io
 ![article preview component (3)](https://github.com/Mahdii-Kariimiian/article-preview-component-master/assets/134393975/85ba0b83-301a-4822-bb7b-9edd714667fd)
 
 ### Links
--Netlify: https://magical-empanada-65ecf9.netlify.app/
+- Netlify: https://magical-empanada-65ecf9.netlify.app/
 - frontendmentors: https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT/hub
 
 ### Built with
