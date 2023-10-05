@@ -12,10 +12,12 @@ Junior challenge at frontendmentors.io
   - [What I used](#what-i-learned)
 - [Author](#author)
 
-## Overview
-This App shows a piece of advice every time the button is clicked
-
 ### Screenshot
+![article preview component (1)](https://github.com/Mahdii-Kariimiian/article-preview-component-master/assets/134393975/3b7e59d5-1e30-4726-bfb1-d174b4ff0a8a)
+
+![article preview component (2)](https://github.com/Mahdii-Kariimiian/article-preview-component-master/assets/134393975/3815d864-8d00-4586-816c-0ed898b6eb17)
+
+![article preview component (3)](https://github.com/Mahdii-Kariimiian/article-preview-component-master/assets/134393975/85ba0b83-301a-4822-bb7b-9edd714667fd)
 
 ### Links
 -Netlify: https://magical-empanada-65ecf9.netlify.app/
